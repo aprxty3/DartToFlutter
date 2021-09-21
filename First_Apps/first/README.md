@@ -1,4 +1,4 @@
-# first
+# dicoding_course
 
 A new Flutter project.
 
