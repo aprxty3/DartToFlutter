@@ -22,7 +22,7 @@ class FirstScreen extends StatefulWidget {
 }
 
 class _FirstScreenState extends State<FirstScreen> {
-  bool agree = false;
+  String? language;
 
   @override
   Widget build(BuildContext context) {
@@ -30,16 +30,28 @@ class _FirstScreenState extends State<FirstScreen> {
       appBar: AppBar(
         title: Text('First Screen'),
       ),
-      body: ListTile(
-        leading: Checkbox(
-          value: agree,
-          onChanged: (bool? value) {
-            setState(() {
-              agree = value;
-            });
-          },
-        ),
-        title: Text('Agree / Disagree'),
+      body: DropdownButton<String>(
+        items: <DropdownMenuItem<String>>[
+          DropdownMenuItem<String>(
+            value: 'Dart',
+            child: Text('Dart'),
+          ),
+          DropdownMenuItem<String>(
+            value: 'Kotlin',
+            child: Text('Kotlin'),
+          ),
+          DropdownMenuItem<String>(
+            value: 'Swift',
+            child: Text('Swift'),
+          ),
+        ],
+        value: language,
+        hint: Text('Select Language'),
+        onChanged: (value) {
+          setState(() {
+            language = value;
+          });
+        },
       ),
     );
   }
