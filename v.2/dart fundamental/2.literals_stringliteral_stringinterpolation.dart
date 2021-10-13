@@ -14,6 +14,8 @@ void main(List<String> args) {
   print(tomorrow);
 
   //string interpolation = variabel yng dapat menggabungkan variabel dan ekspresi
-  String message = 'Nama saya adalah ' + myName;
+  String message = 'Nama saya adalah ' + myName; //tidak direkomendasi
+  String Message = 'Nama saya adalah $myName'; //Sangat Direkomendasi
   print(message);
+  print(Message);
 }
