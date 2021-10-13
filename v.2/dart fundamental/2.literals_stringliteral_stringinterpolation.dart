@@ -8,6 +8,8 @@ void main(List<String> args) {
   //string literals = variabel yg memiliki value, yg tipe datanya string atau text
   String myName = 'Aji';
   String myLast = "Prasetyo";
+  String today = 'jum\'at';
+  String tomorrow = "jum'at";
 
   //string interpolation
 }
