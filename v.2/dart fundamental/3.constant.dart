@@ -10,5 +10,6 @@ void main(List<String> args) {
 //keyword const
   const number = 1000;
   const double multiple = 1.5 * number;
+  print(number);
   print(multiple);
 }
