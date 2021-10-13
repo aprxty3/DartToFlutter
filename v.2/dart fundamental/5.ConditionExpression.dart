@@ -10,11 +10,15 @@ void main(List<String> args) {
   // expression1 ?? expression2
   int angka1 = 5;
   int angka2 = 7;
+  int angka3;
 
   angka1 = angka1 ?? 0;
   angka2 = angka2 ?? 0;
+  angka3 = angka3 ?? 0;
 
   int hasilpertambahan = angka1 + angka2;
+  int hasilpertambahan1 = angka3 + angka2;
   print('$angka1 + $angka2 = $hasilpertambahan');
+  print('$angka3 + $angka2 = $hasilpertambahan1');
   //perbedaannya hanya pada operatornya
 }
