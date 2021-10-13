@@ -11,6 +11,33 @@ void main(List<String> args) {
     print('Jawabanmu bener');
   }
 
-  //Kondisi IF ELSE
-  
+  //Kondisi IF ELSE = kondisi jika hasil pada IF salah maka akan diganti dengan hasil ELSE
+
+  if (hasil == 13) {
+    print('Jawabanmu bener');
+  } else {
+    print('jawabanmu salah');
+  }
+
+  //Kondisi IF ELSE IF = jika memiliki benar pertama dan kedua benar dan yang ketiga salah
+  //jika kondisi pertama benar, maka kondisi pertama dijalankan
+  //jika kondisi kedua benar dan pertama salah, maka kondisi kedua dijalankan
+  //jika kondisi pertama dan kedua salah, makan kondisi ketiga yang akan dijalankan
+
+  int point = 100;
+  print('poin $point');
+
+  String grade;
+
+  if (point >= 80) {
+    grade = 'A';
+  } else if (point >= 60) {
+    grade = 'B';
+  } else if (point >= 40) {
+    grade = 'C';
+  } else {
+    grade = 'D';
+  }
+
+  print('Berarti nilai kamu adalah $grade');
 }
