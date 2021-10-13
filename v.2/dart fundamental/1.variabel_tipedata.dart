@@ -11,9 +11,12 @@ void main(List<String> args) {
   String name = 'Aji';
   var name1 = 'Aji';
 
-  //Boolean
+  //Boole :an
   bool isAlive = true;
 
-  print(age1);
-  print(name);
+  print('umur : $age');
+  print('umur : $age1');
+  print('nama : $name');
+  print('nama : $name1');
+  print(isAlive);
 }
