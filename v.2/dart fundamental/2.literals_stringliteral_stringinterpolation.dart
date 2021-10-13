@@ -10,6 +10,10 @@ void main(List<String> args) {
   String myLast = "Prasetyo";
   String today = 'jum\'at';
   String tomorrow = "jum'at";
+  print(today);
+  print(tomorrow);
 
-  //string interpolation
+  //string interpolation = variabel yng dapat menggabungkan variabel dan ekspresi
+  String message = 'Nama saya adalah ' + myName;
+  print(message);
 }
