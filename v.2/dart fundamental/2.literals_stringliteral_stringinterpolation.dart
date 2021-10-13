@@ -5,8 +5,9 @@ void main(List<String> args) {
   String name = 'Aji';
   bool isAlive = true;
 
-  //string literals = variabel yg memiliki value, yg tipe datanya string atau text 
-
+  //string literals = variabel yg memiliki value, yg tipe datanya string atau text
+  String myName = 'Aji';
+  String myLast = "Prasetyo";
 
   //string interpolation
 }
