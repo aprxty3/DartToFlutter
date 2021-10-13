@@ -6,6 +6,9 @@ void main(List<String> args) {
   final String myName = 'dwi';
   print(name);
   print(myName);
-  
+
 //keyword const
+  const number = 1000;
+  const double multiple = 1.5 * number;
+  print(multiple);
 }
