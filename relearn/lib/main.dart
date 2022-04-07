@@ -14,11 +14,22 @@ class MyApp extends StatelessWidget {
 
 class HomePage extends StatelessWidget {
   final List data = [
-    'data1',
-    'data2',
-    'data3',
-    'data4',
-    'data5',
+    {
+      'judul': 'Pilihan ke - 1',
+      'data': '1',
+    },
+    {
+      'judul': 'Pilihan ke - 2',
+      'data': '2',
+    },
+    {
+      'judul': 'Pilihan ke - 3',
+      'data': '3',
+    },
+    {
+      'judul': 'Pilihan ke - 3',
+      'data': '3',
+    },
   ];
 
   @override
@@ -36,12 +47,14 @@ class HomePage extends StatelessWidget {
             items: data
                 .map(
                   (e) => DropdownMenuItem(
-                    child: Text(e.toString()),
+                    child: Text('TAMPILAN ${e.toString()}'),
                     value: e.toString(),
                   ),
                 )
                 .toList(),
-            onChanged: (valeu) {},
+            onChanged: (value) {
+              print(value);
+            },
           ),
         ),
       ),
