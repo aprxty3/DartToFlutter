@@ -46,9 +46,9 @@ class HomePage extends StatelessWidget {
           child: DropdownButton(
             items: data
                 .map(
-                  (e) => DropdownMenuItem(
-                    child: Text('TAMPILAN ${e.toString()}'),
-                    value: e.toString(),
+                  (e) => DropdownMenuItem<String>(
+                    child: Text('${e['judul']}'),
+                    value: e['data'],
                   ),
                 )
                 .toList(),
