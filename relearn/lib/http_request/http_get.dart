@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 
-// GET Berguna untuk mendapatkan data di server
-// POST Berguna untuk mengirim data ke server //PATCH untuk mengupdate data, sedangkan PUT lebih ke replace/menukar data
-// PUT/PATCH Berguna untuk mengubah data di server
-// DELETE Berguna untuk menghapus data di server
-
-class Homepage extends StatelessWidget {
-  const Homepage({Key? key}) : super(key: key);
+class Http_GET extends StatelessWidget {
+  const Http_GET({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
