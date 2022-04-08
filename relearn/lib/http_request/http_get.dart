@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -46,8 +48,10 @@ class _Http_GETState extends State<Http_GET> {
                 if (myResponse.statusCode == 200) {
                   //Berhasul Get Data
                   print('BERHASIL GET DATA');
+                  Map<String, dynamic> data =
+                      json.decode(myResponse.body) as Map<String, dynamic>;
                   setState(() {
-                    body = myResponse.body;
+                    body = data['data'].toString();
                   });
                 } else {
                   //Berhasul Get Data
