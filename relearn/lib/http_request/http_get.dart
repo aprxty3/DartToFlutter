@@ -11,11 +11,14 @@ class Http_GET extends StatefulWidget {
 }
 
 class _Http_GETState extends State<Http_GET> {
-  late String body;
-
+  late String id;
+  late String name;
+  late String email;
   @override
   void initState() {
-    body = 'Belum Ada Data';
+    id = 'Belum Ada Data';
+    name = 'Belum Ada Data';
+    email = 'Belum Ada Data';
     super.initState();
   }
 
@@ -32,7 +35,25 @@ class _Http_GETState extends State<Http_GET> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              body,
+              'ID : ${id}',
+              style: TextStyle(
+                fontSize: 20,
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              'Nama : ${name}',
+              style: TextStyle(
+                fontSize: 20,
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              'Email : ${email}',
               style: TextStyle(
                 fontSize: 20,
               ),
@@ -50,16 +71,17 @@ class _Http_GETState extends State<Http_GET> {
                   print('BERHASIL GET DATA');
                   Map<String, dynamic> data =
                       json.decode(myResponse.body) as Map<String, dynamic>;
+                  print(data['data']);
                   setState(() {
-                    body = data['data'].toString();
+                    id = data['data']['id'].toString();
+                    email = data['data']['email'].toString();
+                    name =
+                        '${data['data']['first_name']} ${data['data']['last_name']}';
                   });
                 } else {
                   //Berhasul Get Data
 
                   print('Error ${myResponse.statusCode}');
-                  setState(() {
-                    body = 'Error ${myResponse.statusCode}';
-                  });
                 }
 
                 // print('----------------------');
