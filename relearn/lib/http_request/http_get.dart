@@ -1,8 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class Http_GET extends StatelessWidget {
+class Http_GET extends StatefulWidget {
   const Http_GET({Key? key}) : super(key: key);
+
+  @override
+  State<Http_GET> createState() => _Http_GETState();
+}
+
+class _Http_GETState extends State<Http_GET> {
+  late String body;
+
+  @override
+  void initState() {
+    body = 'Belum Ada Data';
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +29,8 @@ class Http_GET extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'Data',
+            Text(
+              body,
               style: TextStyle(
                 fontSize: 20,
               ),
@@ -30,12 +43,26 @@ class Http_GET extends StatelessWidget {
                 var myResponse =
                     await http.get(Uri.parse('https://reqres.in/api/users/2'));
 
-                print(myResponse.body);
-                print('----------------------');
-                print(myResponse.statusCode);
-                print('----------------------');
-                print(myResponse.headers);
-                print('----------------------');
+                if (myResponse.statusCode == 200) {
+                  //Berhasul Get Data
+                  print('BERHASIL GET DATA');
+                  setState(() {
+                    body = myResponse.body;
+                  });
+                } else {
+                  //Berhasul Get Data
+
+                  print('Error ${myResponse.statusCode}');
+                  setState(() {
+                    body = 'Error ${myResponse.statusCode}';
+                  });
+                }
+
+                // print('----------------------');
+                // print(myResponse.statusCode);
+                // print('----------------------');
+                // print(myResponse.headers);
+                // print('----------------------');
               },
               child: Text('GET DATA'),
             ),
