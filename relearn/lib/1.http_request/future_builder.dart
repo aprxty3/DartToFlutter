@@ -8,10 +8,25 @@ class futureBuilder extends StatefulWidget {
 }
 
 class _futureBuilderState extends State<futureBuilder> {
+  List<Map<String, dynamic>> allUser = [];
+
   Future getAllUser() async {
-    await Future.delayed(
-      Duration(seconds: 3),
-    );
+    try {
+      var response = await http.get(Uri.parse('https://reqres.in/api/users'));
+      List data = (json.decode(response.body) as Map<String, dynamic>)['data'];
+      data.forEach((element) {
+        allUser.add(element);
+      });
+      print(allUser);
+    } catch (e) {
+      //print jika terjadi error
+      print('Tejadi kesalahan');
+      print(e);
+    }
+
+    // await Future.delayed(
+    //   Duration(seconds: 3),
+    // );
   }
 
   @override
@@ -29,11 +44,15 @@ class _futureBuilderState extends State<futureBuilder> {
                 );
               }
               return ListView.builder(
-                itemCount: 5,
+                itemCount: allUser.length,
                 itemBuilder: (context, index) => ListTile(
-                  leading: CircleAvatar(),
-                  title: Text('Nama Lengkap'),
-                  subtitle: Text('@gmail'),
+                  leading: CircleAvatar(
+                    backgroundImage: NetworkImage(allUser[index]['avatar']),
+                    backgroundColor: Colors.grey[300],
+                  ),
+                  title: Text(
+                      '${allUser[index]['first_name']} ${allUser[index]['last_name']}'),
+                  subtitle: Text('${allUser[index]['email']}'),
                 ),
               );
             })
