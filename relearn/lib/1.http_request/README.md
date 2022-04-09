@@ -5,3 +5,4 @@ HTTP REQUEST
 // DELETE Berguna untuk menghapus data di server
 
 Future Builder
+*snapshot berguna untuk meloading data dari database
