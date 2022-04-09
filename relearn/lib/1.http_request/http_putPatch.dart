@@ -14,6 +14,12 @@ class _http_PutPatchState extends State<http_PutPatch> {
       appBar: AppBar(
         title: Text('HTTP PUT/PATCH'),
       ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [],
+        ),
+      ),
     );
   }
 }
