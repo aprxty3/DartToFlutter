@@ -45,7 +45,19 @@ class _http_DeleteState extends State<http_Delete> {
             height: 20,
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () async {
+              var response =
+                  await http.delete(Uri.parse('https://reqres.in/api/users/2'));
+              print(response.statusCode);
+
+              if (response.statusCode == 204) {
+                setState(() {
+                  data = data = "Berhasil menghapus data";
+                });
+              }
+              // else {}
+              // Map<String, dynamic> myBody = json.decode(response.body);
+            },
             child: Text('DELETE'),
           ),
         ],
