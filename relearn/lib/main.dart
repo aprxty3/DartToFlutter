@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:relearn/flutter_package/faker.dart';
 import 'package:relearn/http_request/6model.dart';
 import 'package:relearn/http_request/latihan/latihan.dart';
 
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
-      home: LatihanHTTP(),
+      home: Faker(),
     );
   }
 }
