@@ -7,3 +7,6 @@ HTTP REQUEST
 Future Builder
 *snapshot berguna untuk meloading data dari database
 //FUTURE BUILDER Berguna untuk consume API tanpa trigger berupa click atau onpressed
+
+MODEL
+//MODEL Berguna untuk menghandle suatu error(salah pengetikan) disaat consume API
