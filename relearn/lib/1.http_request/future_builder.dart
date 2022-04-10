@@ -32,52 +32,37 @@ class _futureBuilderState extends State<futureBuilder> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('FUTURE BUILDER'),
-        ),
-        body: FutureBuilder(
-            future: getAllUser(),
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.waiting) {
-                return Center(
-                  child: Text('LOADING......'),
-                );
-              }
-              return ListView.builder(
-                itemCount: allUser.length,
-                itemBuilder: (context, index) => ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage: NetworkImage(allUser[index]['avatar']),
-                    backgroundColor: Colors.grey[300],
-                  ),
-                  title: Text(
-                      '${allUser[index]['first_name']} ${allUser[index]['last_name']}'),
-                  subtitle: Text('${allUser[index]['email']}'),
-                ),
+      appBar: AppBar(
+        title: Text('FUTURE BUILDER'),
+      ),
+      body: FutureBuilder(
+        future: getAllUser(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Center(
+              child: Text('LOADING......'),
+            );
+          } else {
+            if (allUser.length == 0) {
+              return Center(
+                child: Text("TIDAK ADA DATA"),
               );
-            })
-
-        // Center(
-        //   child: ElevatedButton(
-        //     onPressed: () async {
-        //       var response =
-        //           await http.get(Uri.parse('https://reqres.in/api/users'));
-        //       List data =
-        //           (json.decode(response.body) as Map<String, dynamic>)['data'];
-        //       print(data);
-        //       print('-------------------------');
-        //       print(data[0]);
-        //       print('-------------------------');
-        //       data.forEach((element) {
-        //         Map<String, dynamic> user = element;
-        //         print(user['email']);
-        //         print(user);
-        //         print('-------------------------');
-        //       });
-        //     },
-        //     child: Text('CLICK'),
-        //   ),
-        // ),
-        );
+            }
+            return ListView.builder(
+              itemCount: allUser.length,
+              itemBuilder: (context, index) => ListTile(
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage(allUser[index]['avatar']),
+                  backgroundColor: Colors.grey[300],
+                ),
+                title: Text(
+                    '${allUser[index]['first_name']} ${allUser[index]['last_name']}'),
+                subtitle: Text('${allUser[index]['email']}'),
+              ),
+            );
+          }
+        },
+      ),
+    );
   }
 }
