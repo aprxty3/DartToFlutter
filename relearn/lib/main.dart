@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:relearn/flutter_package/faker.dart';
-import 'package:relearn/http_request/6model.dart';
-import 'package:relearn/http_request/latihan/latihan.dart';
 
-import 'http_request/1http_get.dart';
+import 'package:faker/faker.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  var faker = new Faker();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
-      home: Faker(),
+      home: Faker_example(),
     );
   }
 }
