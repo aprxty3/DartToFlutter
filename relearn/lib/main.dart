@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:relearn/1.http_request/future_builder.dart';
-import 'package:relearn/1.http_request/http_delete.dart';
-import 'package:relearn/1.http_request/http_post.dart';
-import 'package:relearn/1.http_request/http_putPatch.dart';
-import 'package:relearn/1.http_request/model.dart';
+import 'package:relearn/http_request/6model.dart';
 
-import '1.http_request/http_get.dart';
+import 'http_request/1http_get.dart';
 
 void main() => runApp(MyApp());
 

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-import 'package:relearn/1.http_request/models/model_user.dart';
+import 'package:relearn/http_request/models/model_user.dart';
 
 class Model extends StatefulWidget {
   @override
