@@ -17,13 +17,7 @@ class _ModelState extends State<Model> {
       var response = await http.get(Uri.parse('https://reqres.in/api/users'));
       List data = (json.decode(response.body) as Map<String, dynamic>)['data'];
       data.forEach((element) {
-        allUser.add(
-          UserModel(
-            avatar: element['avatar'],
-            email: element['email'],
-            name: element['first_name'] + '' + element['last_name'],
-          ),
-        );
+        allUser.add(UserModel.fromJson(element));
       });
       print(allUser);
     } catch (e) {
@@ -63,7 +57,8 @@ class _ModelState extends State<Model> {
                   backgroundImage: NetworkImage(allUser[index].avatar),
                   backgroundColor: Colors.grey[300],
                 ),
-                title: Text('${allUser[index].name}'),
+                title: Text(
+                    '${allUser[index].firstName} ${allUser[index].lastName}'),
                 subtitle: Text('${allUser[index].email}'),
               ),
             );
