@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:faker/faker.dart';
 
 class INTL_Example extends StatelessWidget {
   const INTL_Example({Key? key}) : super(key: key);
@@ -9,9 +11,18 @@ class INTL_Example extends StatelessWidget {
       appBar: AppBar(
         title: Text('INTL EXAMPLE'),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [],
+      body: ListView.builder(
+        itemCount: 10,
+        itemBuilder: (context, index) => ListTile(
+          leading: CircleAvatar(
+            backgroundImage:
+                NetworkImage('https://picsum.photos/id/${870 + index}/200/300'),
+            backgroundColor: Colors.grey,
+          ),
+          title: Text('${faker.person.name()}'),
+          subtitle:
+              Text('${DateFormat.yMMMd().add_jms().format(DateTime.now())}'),
+        ),
       ),
     );
   }
