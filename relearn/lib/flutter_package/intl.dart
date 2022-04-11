@@ -3,10 +3,10 @@ import 'package:intl/intl.dart';
 import 'package:faker/faker.dart';
 
 class INTL_Example extends StatelessWidget {
-  const INTL_Example({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
+    String tanggal = DateTime.now().toIso8601String();
+
     return Scaffold(
       appBar: AppBar(
         title: Text('INTL EXAMPLE'),
@@ -20,8 +20,8 @@ class INTL_Example extends StatelessWidget {
             backgroundColor: Colors.grey,
           ),
           title: Text('${faker.person.name()}'),
-          subtitle:
-              Text('${DateFormat.yMMMd().add_jms().format(DateTime.now())}'),
+          subtitle: Text(
+              '${DateFormat.yMMMd().add_jms().format(DateTime.parse(tanggal))}'),
         ),
       ),
     );
