@@ -20,8 +20,8 @@ class INTL_Example extends StatelessWidget {
             backgroundColor: Colors.grey,
           ),
           title: Text('${faker.person.name()}'),
-          subtitle: Text(
-              '${DateFormat.yMMMd().add_jms().format(DateTime.parse(tanggal))}'),
+          subtitle: Text(tanggal),
+          // Text('${DateFormat.yMMMd().add_jms().format(DateTime.parse(tanggal))}'),
         ),
       ),
     );
