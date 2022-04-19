@@ -4,16 +4,20 @@ import 'package:faker/faker.dart';
 
 //Using Convex Bottom Bar
 
-class BottomNavBar extends StatelessWidget {
+class BottomNavBar extends StatefulWidget {
+  @override
+  State<BottomNavBar> createState() => _BottomNavBarState();
+}
+
+class _BottomNavBarState extends State<BottomNavBar> {
   var faker = new Faker();
+
+  int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('FAKER'),
-      ),
-      body: ListView.builder(
+    List<Widget> widgets = [
+      ListView.builder(
         itemCount: 10,
         itemBuilder: (context, index) => ListTile(
           leading: CircleAvatar(
@@ -25,6 +29,24 @@ class BottomNavBar extends StatelessWidget {
           subtitle: Text('${faker.internet.email()}'),
         ),
       ),
+      Center(
+        child: Text('MENU 2'),
+      ),
+      Center(
+        child: Text('MENU 3'),
+      ),
+      Center(
+        child: Text('MENU 4'),
+      ),
+      Center(
+        child: Text('MENU 5'),
+      ),
+    ];
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Bottom Navigation Bar'),
+      ),
+      body: widgets[currentIndex],
       bottomNavigationBar: ConvexAppBar(
         items: [
           TabItem(icon: Icons.home, title: 'Home'),
@@ -33,6 +55,12 @@ class BottomNavBar extends StatelessWidget {
           TabItem(icon: Icons.message, title: 'Message'),
           TabItem(icon: Icons.people, title: 'Profile'),
         ],
+        initialActiveIndex: 2,
+        onTap: (int i) {
+          setState(() {
+            currentIndex = i;
+          });
+        },
       ),
     );
   }
