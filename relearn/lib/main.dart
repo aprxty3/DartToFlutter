@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:relearn/flutter_package/avatar_glow.dart';
 import 'package:relearn/flutter_package/bottom_nav_bar.dart';
+import 'package:relearn/flutter_package/dropdown_search.dart';
 import 'package:relearn/flutter_package/faker.dart';
 
 import 'package:faker/faker.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
-      home: IntroductionScreens(),
+      home: DropdownSearchPage(),
     );
   }
 }
