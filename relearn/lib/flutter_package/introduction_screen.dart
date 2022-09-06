@@ -29,8 +29,8 @@ class IntroductionScreens extends StatelessWidget {
         )
       ],
       showNextButton: true,
-      done: Text('done'),
-      next: Text('next'),
+      done: const Text('done'),
+      next: const Text('next'),
       onDone: () {
         Navigator.pushReplacement(
             context,
