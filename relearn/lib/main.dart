@@ -6,7 +6,7 @@ import 'package:relearn/flutter_package/faker.dart';
 
 import 'package:faker/faker.dart';
 import 'package:relearn/flutter_package/intl.dart';
-import 'package:relearn/flutter_package/introduction_screen.dart';
+import 'package:relearn/flutter_package/introduction_screen_and_lottie.dart';
 
 void main() {
   var faker = new Faker();
