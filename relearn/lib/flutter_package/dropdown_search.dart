@@ -8,14 +8,27 @@ class DropdownSearchPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: DropdownSearch<String>(
-          popupProps: PopupProps.menu(
-            showSelectedItems: true,
-            disabledItemFn: (String s) => s.startsWith('I'),
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: DropdownSearch<String>(
+            clearButtonProps: ClearButtonProps(
+              isVisible: true,
+            ),
+            popupProps: PopupProps.menu(
+              showSearchBox: true,
+              showSelectedItems: true,
+              disabledItemFn: (String s) => s.startsWith('I'),
+            ),
+            items: [
+              "Brazil",
+              "Italia (Disabled)",
+              "Tunisia",
+              'Canada',
+              'Indonesia'
+            ],
+            onChanged: print,
+            selectedItem: "Brazil",
           ),
-          items: ["Brazil", "Italia (Disabled)", "Tunisia", 'Canada'],
-          onChanged: print,
-          selectedItem: "Brazil",
         ),
       ),
     );
