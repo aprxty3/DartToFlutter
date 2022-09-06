@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:lottie/lottie.dart';
 import 'package:relearn/flutter_package/avatar_glow.dart';
 
 class IntroductionScreens extends StatelessWidget {
@@ -23,8 +24,7 @@ class IntroductionScreens extends StatelessWidget {
           body:
               "Here you can write the description of the page, to explain someting...",
           image: Center(
-            child: Image.network("https://picsum.photos/seed/picsum/200/300",
-                height: 175.0),
+            child: Lottie.asset('assets/lottie/login.json', width: 200),
           ),
         )
       ],
