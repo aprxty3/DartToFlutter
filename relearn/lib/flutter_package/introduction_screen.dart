@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:relearn/flutter_package/avatar_glow.dart';
 
 class IntroductionScreens extends StatelessWidget {
   const IntroductionScreens({Key? key}) : super(key: key);
@@ -13,8 +14,8 @@ class IntroductionScreens extends StatelessWidget {
           body:
               "Here you can write the description of the page, to explain someting...",
           image: Center(
-            child:
-                Image.network("https://domaine.com/image.png", height: 175.0),
+            child: Image.network("https://picsum.photos/seed/picsum/200/300",
+                height: 175.0),
           ),
         ),
         PageViewModel(
@@ -22,13 +23,21 @@ class IntroductionScreens extends StatelessWidget {
           body:
               "Here you can write the description of the page, to explain someting...",
           image: Center(
-            child:
-                Image.network("https://domaine.com/image.png", height: 175.0),
+            child: Image.network("https://picsum.photos/seed/picsum/200/300",
+                height: 175.0),
           ),
         )
       ],
+      showNextButton: true,
       done: Text('done'),
-      onDone: () {},
+      next: Text('next'),
+      onDone: () {
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Avatar_Glow(),
+            ));
+      },
     );
   }
 }
