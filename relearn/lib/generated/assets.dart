@@ -2,6 +2,7 @@
 class Assets {
   Assets._();
 
+  static const String iconIcon = 'assets/icon/icon.jpeg';
   static const String lottieLogin = 'assets/lottie/login.json';
 
 }
